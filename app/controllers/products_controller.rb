@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @product = Product.new
   end
 
   def create
