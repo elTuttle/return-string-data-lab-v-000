@@ -12,13 +12,13 @@ $(function () {
       // Replace text of body-id div
       $.get("/products/" + id + "/inventory", function(data_i) {
         var response = "Available";
-        if (data === false) {
+        if (data_i === false) {
           response = "Sold Out";
         }
         $("#body-" + id).text(response);
       });
     });
-    
+
   });
 });
 </script>
