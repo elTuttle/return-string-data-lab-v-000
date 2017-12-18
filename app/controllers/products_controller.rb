@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def new
+    
+  end
+
   def inventory
     product = Product.find(params[:id])
     if product.inventory > 0
