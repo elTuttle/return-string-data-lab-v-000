@@ -14,7 +14,10 @@ $(function () {
     });
     $.get("/products/" + id + "/inventory", function(data) {
       // Replace text of body-id div
-      console.log(data);
+      var response = "Available"
+      if (data === false) {
+        response = "Sold Out";
+      }
       $("#body-" + id).text(data);
     });
   });
