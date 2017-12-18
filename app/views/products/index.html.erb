@@ -14,7 +14,7 @@ $(function () {
     });
     $.get("/products/" + id + "/inventory", function(data) {
       // Replace text of body-id div
-      var response = "Available"
+      var response = "Available";
       if (data === false) {
         response = "Sold Out";
       }
