@@ -12,6 +12,10 @@ $(function () {
       // Replace text of body-id div
       $("#body-" + id).text(data);
     });
+    $.get("/products/" + id + "/inventory", function(data) {
+      // Replace text of body-id div
+      $("#body-" + id).text(data);
+    });
   });
 });
 </script>
