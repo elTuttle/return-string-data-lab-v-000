@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-
+    
   end
 
   def inventory
@@ -24,6 +24,12 @@ class ProductsController < ApplicationController
   def description
     product = Product.find(params[:id])
     render plain: product.description
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :price, :inventory, :description)
   end
 
 end
