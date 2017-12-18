@@ -10,7 +10,7 @@ $(function () {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data) {
       // Replace text of body-id div
-      $("#body-" + id).text(data);
+      $("#body-" + id)innerHTML + ('<p>' + data + '</p>');
     });
     $.get("/products/" + id + "/inventory", function(data) {
       // Replace text of body-id div
