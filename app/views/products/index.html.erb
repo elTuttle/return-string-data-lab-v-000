@@ -10,16 +10,15 @@ $(function () {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data) {
       // Replace text of body-id div
-      $("#body-" + id).text(data);
+      $.get("/products/" + id + "/inventory", function(data_i) {
+        var response = "Available";
+        if (data === false) {
+          response = "Sold Out";
+        }
+        $("#body-" + id).text(response);
+      });
     });
-    $.get("/products/" + id + "/inventory", function(data) {
-      // Replace text of body-id div
-      var response = "Available";
-      if (data === false) {
-        response = "Sold Out";
-      }
-      $("#body-" + id).text(response);
-    });
+    
   });
 });
 </script>
