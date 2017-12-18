@@ -14,6 +14,7 @@ $(function () {
     });
     $.get("/products/" + id + "/inventory", function(data) {
       // Replace text of body-id div
+      debugger;
       $("#body-" + id).text(data);
     });
   });
